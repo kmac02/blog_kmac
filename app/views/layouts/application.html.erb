@@ -9,6 +9,35 @@
   </head>
 
   <body>
+    <div id="sidebar">
+      <div id="logo">
+      </div>
+    <ul>
+      <li class="category">Site</li>
+      <li> <%= link_to "Blog", root_path %> </li>
+      <li>About</li>
+    </ul>
+
+    <ul>
+      <li class="category">Social</li>
+      <li><a href="https://github.com/kmac02">Github</a></li>
+    </ul>
+
+    <p class="sign_in">Login</p>
+    </div>
+
+    <div id="main_content">
+      <header>
+        <p>All posts</p>
+        <div class="buttons">
+          <button class="button"><%= link_to "New Post", new_post_path %> </button>
+          <button class="button">Logout</button>
+        </div>
+      </header>
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert") %>
+      <% end %>
     <%= yield %>
+    </div>
   </body>
 </html>
