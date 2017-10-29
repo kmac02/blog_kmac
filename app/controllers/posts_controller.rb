@@ -1,23 +1,31 @@
 class PostsController < ApplicationController
-
+  before_action :authorize, except: [:index, :show]
 
   def index
     @posts = Post.all.order('created_at DESC')
   end
 
   def new
+    p "test"
     @post = Post.new
+    # @post = Post.new
+    # if @post.save
+    #   redirect_to @post
+    # else
+    #   render 'new'
+    # end
+  end
+
+  def create
+    @post = Post.new(post_params)
+    # @post.save
+    # redirect_to @post
+    # @post = Post.new
     if @post.save
       redirect_to @post
     else
       render 'new'
     end
-  end
-
-  def create
-    @post = Post.new(post_params)
-    @post.save
-    redirect_to @post
   end
 
   def show
