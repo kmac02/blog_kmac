@@ -1,4 +1,4 @@
-<h1>Signup!</h1>
+<h1>Signup</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
 
@@ -8,9 +8,12 @@
   <%= f.label :email %><br>
   <%= f.text_field :email %><br>
   <br>
-  Password: <%= f.password_field :password %><br>
+  <p>Password</p><br>
+  <%= f.password_field :password %><br>
   <br>
-  Password Confirmation: <%= f.password_field :password_confirmation %><br>
+  <p>Confirm Password</p><br>
+  <%= f.password_field :password_confirmation %><br>
+  <br>
   <%= f.submit "Submit" %><br>
 
 <% end %>

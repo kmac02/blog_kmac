@@ -38,7 +38,7 @@ a {
 
   height: 100%;
 
-  background:  linear-gradient(#01827f, #82dbe0);
+  background:  linear-gradient(#18b2c9, #004049);
 
   padding: 7em 0 0 0;
 
@@ -71,7 +71,7 @@ a {
 
       a {
 
-        color: #244f6b;
+        color: #00272d;
 
         text-decoration: none;
 
@@ -79,7 +79,7 @@ a {
 
         &:hover {
 
-          color: #33acb7;
+          color: #ffffff;
 
         }
 
@@ -99,19 +99,7 @@ a {
 
   }
 
-  .sign_in {
 
-    position: absolute;
-
-    right: 3em;
-
-    top: 80%;
-
-    font-size: .8em;
-
-    color: #9eafba;
-
-  }
 
 }
 
@@ -133,11 +121,11 @@ a {
 
     border: 1px solid #33acb7;
 
-    color: #33acb7;
+    color: #ffffff;
 
     a {
 
-      color: #33acb7 !important;
+      color: #ffffff !important;
 
     }
 
@@ -165,7 +153,7 @@ a {
 
 #main_content {
 
-  margin-left: 250px;
+  margin-left: 210px;
 
   #header {
 
@@ -173,7 +161,6 @@ a {
 
     border-bottom: 1px solid #d6dce0;
 
-    background: #f5f7f9;
 
     color: #9eafba;
 
