@@ -22,7 +22,11 @@
       <li class="category">Social</li>
       <li><a href="https://github.com/kmac02">Github</a></li>
     </ul>
-
+    <% if current_user %>
+      Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+    <% else %>
+      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    <% end %>
     <p class="sign_in">Login</p>
     </div>
 
@@ -36,8 +40,10 @@
           <%= link_to "Back to all posts", root_path %>
         <% end %>
         <div class="buttons">
+        <% if current_user %>
           <button class="button"><%= link_to "New Post", new_post_path %> </button>
           <button class="button">Logout</button>
+        <% end %>
         </div>
       </header>
       <% flash.each do |name, msg| %>
