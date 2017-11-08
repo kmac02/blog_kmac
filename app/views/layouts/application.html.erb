@@ -22,17 +22,18 @@
     </ul>
 
     <ul>
-      <% if current_user %>
+      <% if user_signed_in? %>
         <div class="new-post-button">
-          <% if current_user %>
+
             <button class="button"><%= link_to "New Post", new_post_path %> </button>
-          <% end %>
+
         </div>
-        <li class="user"><%= current_user.name %></li>
-        <li  class="user category"><%= link_to "Logout", '/logout' %></li>
-      <% else %>
-        <li class="user"><%= link_to 'Login', '/login' %></li>
-        <li class="user"><%= link_to 'Signup', '/signup' %></li>
+
+        <li  class="user category"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% end %>
+      <% if !user_signed_in? %>
+        <li class="user"><%= link_to 'Login', '/users/sign_in' %></li>
+        <li class="user"><%= link_to 'Signup', '/users/sign_up' %></li>
       <% end %>
     </ul>
 

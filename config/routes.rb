@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :posts  do
     resources :comments
   end
@@ -7,11 +8,11 @@ Rails.application.routes.draw do
 
   get '/about', to: "pages#about"
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  # get '/signup' => 'users#new'
+  # post '/users' => 'users#create'
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  # get '/login' => 'sessions#new'
+  # post '/login' => 'sessions#create'
+  # get '/logout' => 'sessions#destroy'
 
 end
